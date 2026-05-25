@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Product</title>
+</head>
+
+<body>
+    <h1>Edit Product</h1>
+    <form action="/products/<%= product._id %>?_method=put" method="post">
+        <input type="text" name="name" placeholder="product name" value="<%=product.name %>">
+        <input type="number" name="price" placeholder="price" value="<%=product.price %>">
+        <select name="category" id="" value="<%=product.category%>">
+            <option value="vegetable" <% if(product.category==='vegetable' ){%> selected <% } %>>vegetable</option>
+            <option value="fruit" <% if(product.category==='fruit' ){%> selected <% } %>>fruit</option>
+            <option value="dairy" <% if(product.category==='dairy' ){%> selected <% } %>>dairy</option>
+        </select>
+        <button>Edit</button>
+    </form>
+</body>
+
+</html>
